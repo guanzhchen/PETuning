@@ -10,7 +10,6 @@ from transformers import RobertaModel, RobertaPreTrainedModel
 from transformers.modeling_outputs import SequenceClassifierOutput, BaseModelOutput, Seq2SeqLMOutput
 
 from model.prefix_encoder import PrefixEncoder
-from model.deberta import DebertaModel, DebertaPreTrainedModel, ContextPooler, StableDropout
 
 from transformers.adapters.models.bert import BertModelHeadsMixin
 

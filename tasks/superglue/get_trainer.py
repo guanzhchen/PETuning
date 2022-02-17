@@ -12,10 +12,9 @@ from transformers import (
 
 from model.utils import get_model, TaskType
 
-from tasks.superglue.dataset_record import SuperGlueDatasetForRecord
 from training.trainer_base import BaseTrainer, BaseAdapterTrainer
-from training.trainer_exp import ExponentialTrainer
 from transformers import  Trainer, AdapterTrainer, EarlyStoppingCallback, set_seed
+from tasks.superglue.dataset import SuperGlueDataset
 # from training.trainer import Trainer
 
 logger = logging.getLogger(__name__)
@@ -27,12 +26,6 @@ def get_trainer(args):
     log_level = training_args.get_process_log_level()
     logger.setLevel(log_level)
 
-    if data_args.pilot is not None:
-        from tasks.superglue.dataset_pilot import SuperGlueDataset
-    elif data_args.max_train_samples is not None:
-        from tasks.superglue.dataset_divide import SuperGlueDataset
-    else:
-        from tasks.superglue.dataset import SuperGlueDataset
     
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.model_name_or_path,
@@ -81,15 +74,7 @@ def get_trainer(args):
                 non_linearity=adapter_args.adapter_non_linearity,
                 reduction_factor=adapter_args.adapter_reduction_factor,
             )
-            # load a pre-trained from Hub if specified
-            # if adapter_args.load_adapter:
-            #     model.load_adapter(
-            #         adapter_args.load_adapter,
-            #         config=adapter_config,
-            #         load_as=task_name,
-            #     )
-            # # otherwise, add a fresh adapter
-            # else:
+
             model.add_adapter(task_name, config=adapter_config)
         # Freeze all model weights except of those of this adapter
         model.train_adapter([task_name])
@@ -113,19 +98,7 @@ def get_trainer(args):
         if p.requires_grad:
             trained_param += p.numel()
             logger.info(f"{n}")
-    print(trained_param/124647170)
-    # Initialize our Trainer
-    # trainer_cls = BaseAdapterTrainer if adapter_args.train_adapter else BaseTrainer
-    # trainer = trainer_cls(
-    #     model=model,
-    #     args=training_args,
-    #     train_dataset=dataset.train_dataset if training_args.do_train else None,
-    #     eval_dataset=dataset.eval_dataset if training_args.do_eval else None,
-    #     compute_metrics=dataset.compute_metrics,
-    #     tokenizer=tokenizer,
-    #     data_collator=dataset.data_collator,
-    #     test_key=dataset.test_key
-    # )
+
     set_seed(training_args.seed)
     print("set data randome seed ", training_args.seed)
     trainer_cls = AdapterTrainer if adapter_args.train_adapter else Trainer

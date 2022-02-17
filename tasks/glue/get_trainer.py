@@ -10,7 +10,7 @@ from transformers import (
 )
 
 from model.utils import get_model, TaskType
-# from tasks.glue.dataset import GlueDataset
+from tasks.glue.dataset import GlueDataset
 from training.trainer_base import BaseTrainer
 from transformers import Trainer, AdapterTrainer, EarlyStoppingCallback
 
@@ -24,10 +24,6 @@ def get_trainer(args):
         use_fast=model_args.use_fast_tokenizer,
         revision=model_args.model_revision,
     )
-    if data_args.max_train_samples is not None:
-        from tasks.glue.dataset_divide import GlueDataset
-    else:
-        from tasks.glue.dataset import GlueDataset
     dataset = GlueDataset(tokenizer, data_args, training_args)
 
     if not dataset.is_regression:
@@ -88,20 +84,9 @@ def get_trainer(args):
     logger.info("Trainable parameters:")
     for n, p in param_optimizer:
         if p.requires_grad:
-            # logger.info(f"{n}")
-            print(n)
-    # Initialize our Trainer
-    # trainer_cls = BaseAdapterTrainer if adapter_args.train_adapter else BaseTrainer
-    # trainer = trainer_cls(
-    #     model=model,
-    #     args=training_args,
-    #     train_dataset=dataset.train_dataset if training_args.do_train else None,
-    #     eval_dataset=dataset.eval_dataset if training_args.do_eval else None,
-    #     compute_metrics=dataset.compute_metrics,
-    #     tokenizer=tokenizer,
-    #     data_collator=dataset.data_collator,
-    #     test_key=dataset.test_key
-    # )
+            logger.info(f"{n}")
+            # print(n)
+
     trainer_cls = AdapterTrainer if adapter_args.train_adapter else Trainer
     trainer = trainer_cls(
         model=model,

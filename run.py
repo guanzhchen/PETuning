@@ -86,18 +86,6 @@ if __name__ == '__main__':
     elif data_args.task_name.lower() == "glue":
         assert data_args.dataset_name.lower() in GLUE_DATASETS
         from tasks.glue.get_trainer import get_trainer
-
-    elif data_args.task_name.lower() == "ner":
-        assert data_args.dataset_name.lower() in NER_DATASETS
-        from tasks.ner.get_trainer import get_trainer
-
-    elif data_args.task_name.lower() == "srl":
-        assert data_args.dataset_name.lower() in SRL_DATASETS
-        from tasks.srl.get_trainer import get_trainer
-    
-    elif data_args.task_name.lower() == "qa":
-        assert data_args.dataset_name.lower() in QA_DATASETS
-        from tasks.qa.get_trainer import get_trainer
         
     else:
         raise NotImplementedError('Task {} is not implemented. Please choose a task from: {}'.format(data_args.task_name, ", ".join(TASKS)))
