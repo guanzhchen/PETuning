@@ -44,7 +44,7 @@ All datasets in GLUE and SuperGLUE will be automatically downloaded (from Huggin
 
 
 
-## Tuning Models for Each Task
+## PETuning for Each Task
 
 To search the best hyper-parameters for each task,  you can run the scripts in the `scripts/search_scripts/` folder. For example,  you can run the CB tasks with adapter by the command:
 
