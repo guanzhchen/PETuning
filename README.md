@@ -12,6 +12,8 @@ We provide a comprehensive study for exisiting famous **P**arameter-**E**fficien
 
 The code structure is based in part on [P-tuning v2](https://github.com/THUDM/P-tuning-v2). (Thanks for their awesome work.)
 
+P.S. There may be some imperfections in the arxiv version (apology for that). If you are confused about something, please feel free to contact me (by presenting issues or email).
+
 
 
 ## File Structure
