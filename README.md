@@ -76,3 +76,18 @@ We provide the best hyper-parameters for each task in corresponding multi-runs s
 
 [BitFit](https://github.com/benzakenelad/BitFit)
 
+
+## Citation
+
+If you find our paper and resources useful, please kindly cite our paper:
+
+```
+@misc{chen2022revisiting,
+   title={Revisiting Parameter-Efficient Tuning: Are We Really There Yet?}, 
+   author={Guanzheng Chen and Fangyu Liu and Zaiqiao Meng and Shangsong Liang},
+   year={2022},
+   eprint={2202.07962},
+   archivePrefix={arXiv},
+   primaryClass={cs.CL}
+}
+```
