@@ -26,7 +26,9 @@ logger = logging.getLogger(__name__)
 class SuperGlueDataset():
     def __init__(self, tokenizer: AutoTokenizer, data_args, training_args) -> None:
         super().__init__()
+        # offline
         raw_datasets = load_dataset("./tasks/superglue/super_glue.py", data_args.dataset_name)
+        # online
         # raw_datasets = load_dataset("super_glue", data_args.dataset_name)
         self.tokenizer = tokenizer
         self.data_args = data_args
@@ -99,7 +101,7 @@ class SuperGlueDataset():
             self.predict_dataset = raw_datasets["validation"]
             if data_args.max_predict_samples is not None:
                 self.predict_dataset = self.predict_dataset.select(range(data_args.max_predict_samples))
-
+        # offline
         self.metric = load_metric("./tasks/superglue/super_glue_metric.py", data_args.dataset_name)
 
         if data_args.pad_to_max_length:
