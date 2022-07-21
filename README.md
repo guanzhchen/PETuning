@@ -6,7 +6,7 @@ This is the code implementation of our paper:
 
 
 
-We provide a comprehensive study for exisiting famous **P**arameter-**E**fficient **Tuning** (PETuning) methods, i.e., Adapter, Prompt, LoRA, and BitFit, focusing on their performance and stability.
+We provide a comprehensive study for existing famous **P**arameter-**E**fficient **Tuning** (PETuning) methods, i.e., Adapter, Prompt, LoRA, and BitFit, focusing on their performance and stability.
 
 
 
