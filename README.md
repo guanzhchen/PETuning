@@ -1,8 +1,8 @@
 # Revisiting Parameter-Efficient Tuning: Are We Really There Yet?
 
-This is the code implementation of our paper:
+This is the code implementation of our paper accepted in EMNLP 2022:
 
-> Guanzheng Chen, Fangyu Liu, Zaiqiao Meng, Shangsong Liang. [Revisiting Parameter-Efficient Tuning: Are We Really There Yet?](https://arxiv.org/abs/2202.07962). arXiv 2022; abs/2202.07962.
+> Guanzheng Chen, Fangyu Liu, Zaiqiao Meng, Shangsong Liang. [Revisiting Parameter-Efficient Tuning: Are We Really There Yet?](https://arxiv.org/abs/2202.07962).
 
 
 
@@ -11,8 +11,6 @@ We provide a comprehensive study for existing famous **P**arameter-**E**fficient
 
 
 The code structure is based in part on [P-tuning v2](https://github.com/THUDM/P-tuning-v2). (Thanks for their awesome work.)
-
-P.S. There might be some issues in the arxiv version (apology for that). If you have any questions, please feel free to contact me (by presenting issues or email).
 
 
 
