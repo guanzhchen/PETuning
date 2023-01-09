@@ -82,12 +82,11 @@ We provide the best hyper-parameters for each task in corresponding multi-runs s
 If you find our paper and resources useful, please kindly cite our paper:
 
 ```
-@misc{chen2022revisiting,
-   title={Revisiting Parameter-Efficient Tuning: Are We Really There Yet?}, 
-   author={Guanzheng Chen and Fangyu Liu and Zaiqiao Meng and Shangsong Liang},
-   year={2022},
-   eprint={2202.07962},
-   archivePrefix={arXiv},
-   primaryClass={cs.CL}
+@article{Chen2022RevisitingPT,
+  title={Revisiting Parameter-Efficient Tuning: Are We Really There Yet?},
+  author={Guanzheng Chen and Fangyu Liu and Zaiqiao Meng and Shangsong Liang},
+  journal={ArXiv},
+  year={2022},
+  volume={abs/2202.07962}
 }
 ```
