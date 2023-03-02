@@ -82,11 +82,19 @@ We provide the best hyper-parameters for each task in corresponding multi-runs s
 If you find our paper and resources useful, please kindly cite our paper:
 
 ```
-@article{Chen2022RevisitingPT,
-  title={Revisiting Parameter-Efficient Tuning: Are We Really There Yet?},
-  author={Guanzheng Chen and Fangyu Liu and Zaiqiao Meng and Shangsong Liang},
-  journal={ArXiv},
-  year={2022},
-  volume={abs/2202.07962}
+@inproceedings{chen-etal-2022-revisiting,
+    title = "Revisiting Parameter-Efficient Tuning: Are We Really There Yet?",
+    author = "Chen, Guanzheng  and
+      Liu, Fangyu  and
+      Meng, Zaiqiao  and
+      Liang, Shangsong",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.168",
+    pages = "2612--2626",
 }
+
 ```
